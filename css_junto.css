@@ -612,6 +612,9 @@ border: 1px solid rgb(255, 255, 255);
   .index_decoracion2{
 display: none;
   }
+  .index_ap{
+    display: none;
+  }
   .index_contenedor_experiencia_alumnos{
     justify-content: center;
     text-align: center;
@@ -657,6 +660,9 @@ display: none;
 #index_img_banner{
 padding-bottom: 3%;
 }
+.index_ap{
+  display: none;
+  }
 .index_contenedor_experiencia_alumnos{
   display: inline-flexbox;
   text-align: center;
