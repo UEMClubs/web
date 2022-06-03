@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+
+<script>
+  (function ($) {
+    // variables
+    elementWidth = $('ul').width(),
+      containerWidth = $('nav').width(),
+      difference = elementWidth - containerWidth,
+      finalWidth = difference * 1.5,
+      element = $('ul');
+
+    // active on click
+    $('li').on('click', function () {
+      $('li').removeClass('active');
+      $(this).addClass('active');
+    });
+  })(jQuery); ç
+</script>
+
+<style>
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  ::selection {
+    background-color: #ff0000;
+    color: #1b1b1b;
+
+  }
+
+  nav {
+    width: 100%;
+    background-color: #e63636;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    overflow: hidden;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 140vw;
+  }
+
+  nav li {
+    margin: 0;
+    /* float: left; */
+    display: inline-block;
+    height: 98px;
+    margin-bottom: 2px;
+    line-height: 100px;
+    width: 20vw;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.589);
+    transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    transform: translateY(100%);
+  }
+
+  nav li.active {
+    background-color: #151515;
+    color: #efefef;
+  }
+
+  nav li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7ca18;
+  }
+
+  nav li:nth-child(1) {
+    animation: pop 0.5s 0.15s 1 forwards;
+  }
+
+  nav li:nth-child(2) {
+    animation: pop 0.5s 0.3s 1 forwards;
+  }
+
+  nav li:nth-child(3) {
+    animation: pop 0.5s 0.45s 1 forwards;
+  }
+
+  nav li:nth-child(4) {
+    animation: pop 0.5s 0.6s 1 forwards;
+  }
+
+  nav li:nth-child(5) {
+    animation: pop 0.5s 0.75s 1 forwards;
+  }
+
+  nav li:nth-child(6) {
+    animation: pop 0.5s 0.9s 1 forwards;
+  }
+
+  nav li:nth-child(7) {
+    animation: pop 0.5s 1.05s 1 forwards;
+  }
+
+  nav li:hover {
+    color: #ececec;
+  }
+
+  nav li:active {
+    background-color: #222;
+  }
+
+  nav li:nth-child(1):hover~.slide {
+    left: 0;
+  }
+
+  nav li:nth-child(2):hover~.slide {
+    left: 20vw;
+  }
+
+  nav li:nth-child(3):hover~.slide {
+    left: 40vw;
+  }
+
+  nav li:nth-child(4):hover~.slide {
+    left: 60vw;
+  }
+
+  nav li:nth-child(5):hover~.slide {
+    left: 80vw;
+  }
+
+  nav li:nth-child(6):hover~.slide {
+    left: 100vw;
+  }
+
+  nav li:nth-child(7):hover~.slide {
+    left: 120vw;
+  }
+
+  nav li.slide {
+    position: absolute;
+    left: -20vw;
+    top: 0;
+    background-color: #fff;
+    z-index: -1;
+    height: -20px;
+    margin-top: 98px;
+    transition: left 0.3s ease;
+    transform: translateY(0);
+  }
+
+  section {
+
+    background-color: #1b1b1b;
+    height: 100vh;
+    display: flex;
+  }
+
+  section .title {
+    padding-left: 400px;
+    max-width: 60%;
+    width: 100%;
+    align-self: center;
+    transform: translateY(-50px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 450px;
+  }
+
+  section .title span {
+    display: inline-block;
+    font-size: 5vw;
+    color: #efefef;
+    width: 100%;
+    text-transform: uppercase;
+    transform: translateX(-100%);
+    animation: byBottom 1s ease both;
+    font-weight: 600;
+    letter-spacing: 0.25vw;
+  }
+
+  section .title span:last-child {
+    font-size: 1rem;
+    animation: byBottom 1s 0.25s ease both;
+  }
+
+  section .title span a {
+    position: relative;
+    display: inline-block;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: #ff0000;
+  }
+
+  section .title span a::after {
+    content: "";
+    height: 2px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    animation: linkAfter 0.5s 1s ease both;
+  }
+
+  /* .carruselete{ */
+  /* animation: byBottom 1s 0.25s ease both; */
+
+  /* } */
+
+  @-moz-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @-webkit-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @-o-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @-moz-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @-webkit-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @-o-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @-moz-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 30px;
+    }
+  }
+
+  @-webkit-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 30px;
+    }
+  }
+
+  @-o-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 30px;
+    }
+  }
+
+  @keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 30px;
+    }
+  }
+
+
+  .clubs_video {
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .clubs_app_cortina {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .clubs_videoGrande {
+    height: 120vh;
+  }
+
+  /** CARTEL PRESENTACIÓN CLUBS */
+  .clubs_presentacion {
+    text-align: center;
+    color: rgba(255, 255, 255);
+    font-size: 4.5em;
+    text-shadow: 0px 0px 20px rgb(0, 0, 0);
+    position: relative;
+  }
+
+  /** PRESENTACIÓN CLUBS TECNOLOGIA */
+  .clubs_banners_1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    width: 60%;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background: url(img/clubs_bannerInformatica.png) bottom no-repeat;
+  }
+
+  .clubs_banners_1 p {
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    font-size: 3em;
+    text-align: center;
+  }
+
+  /** PRESENTACIÓN CLUBS DEPORTE */
+  .clubs_banners_2 {
+    position: relative;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background: url(img/clubs_bannerDeporte.jpg) bottom no-repeat;
+  }
+
+  .clubs_banners_2 p {
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    font-size: 3em;
+    text-align: center;
+  }
+
+  /** PRESENTACIÓN CLUBS CIENCIAS */
+  .clubs_banners_3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    width: 60%;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background: url(img/clubs_bannerCiencias.png) bottom no-repeat;
+  }
+
+  .clubs_banners_3 p {
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    font-size: 3em;
+    text-align: center;
+  }
+
+  /** PRESENTACIÓN CLUBS SOCIALES */
+  .clubs_banners_4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+
+    width: 60%;
+    height: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background: url(img/clubs_bannerSocial.png) center no-repeat;
+  }
+
+  .clubs_banners_4 p {
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    font-size: 3em;
+    text-align: center;
+  }
+
+  /** TARJETAS CLUBS */
+  .clubs_cuerpo {
+    margin-top: -4%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 60vh;
+    justify-content: center;
+  }
+
+  /* PROPIEDADES CARTAS */
+  .clubs_tarjetas {
+    width: 20em;
+    height: 22em;
+    /* margin: 3em; */
+    position: relative;
+    font-family: "Droid Serif", serif;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.4s;
+    background-size: 197%;
+  }
+
+  #clubs_1 {
+    background: url(img-clubs/gamestudio_pvxVU59.svg) center no-repeat;
+    background-size: 197%;
+    background-color: rgb(255, 255, 255);
+  }
+
+  #clubs_4 {
+    background: url(img-clubs/formula.svg) center no-repeat;
+    background-size: 197%;
+    background-color: rgb(255, 255, 255);
+  }
+
+  #clubs_5 {
+    background: url(img-clubs/pride.svg) center no-repeat;
+    background-size: 197%;
+    background-color: rgb(255, 255, 255);
+  }
+
+  #clubs_7 {
+    background: url(img-clubs/airdiv.jpg) center no-repeat;
+    background-size: 197%;
+    background-color: rgb(255, 255, 255);
+  }
+
+  #clubs_10 {
+    background: url(img-clubs/phyxs-logo-club-madrid-400x225.svg) center no-repeat;
+    background-size: 197%;
+    background-color: rgb(255, 255, 255);
+  }
+
+  #clubs_11 {
+    background: url(img-clubs/criptoclub.svg) center no-repeat;
+    background-size: 160%;
+    background-color: rgb(255, 255, 255);
+  }
+
+
+  /* propiedades elementos a */
+  .clubs_tarjetas a {
+    line-height: 2.5em;
+    /* background-color:rgba(0, 0, 0, 0.489); */
+    text-align: center;
+    width: 100%;
+    height: 2.5em;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .clubs_tarjetas .clubs_color_overlay {
+    background: rgba(110, 109, 109, 0.2);
+    width: 550px;
+    height: 500px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+  }
+
+  .clubs_tarjetas .clubs_gradient_overlay {
+    background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.9) 0%);
+    width: 550px;
+    height: 500px;
+    position: absolute;
+    top: 350px;
+    left: 0;
+    z-index: 15;
+  }
+
+  /* DIFUMINADO DE LA CARTA */
+  .clubs_tarjetas:hover {
+    box-shadow: 0px 18px 40px -9px rgba(0, 10, 30, 0.75);
+  }
+
+  .clubs_tarjetas:hover .clubs_card_info {
+    opacity: 1;
+    bottom: 50px;
+  }
+
+  .clubs_tarjetas:hover .clubs_color_overlay {
+    background: rgba(91, 91, 98, 0.8);
+  }
+
+  /* MUEVE EL TEXTO */
+  .clubs_tarjetas:hover .clubs_titulo {
+    margin-top: -280px;
+  }
+
+  .clubs_titulo {
+    text-align: center;
+    margin: 100px 0 0 0;
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.6s;
+  }
+
+  /* EFECTOS INTERIOR */
+
+  .clubs_tarjetas:hover h3:after {
+    animation: changeLetter 0.3s 1 linear;
+    width: 100%;
+  }
+
+  /* TAMAÑO NOMBRE CLUB */
+  .clubs_tarjetas h3 {
+    margin-left: 13px;
+    font-size: 1.3em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: "Abril Fatface", serif;
+    margin-bottom: 3px;
+    display: inline-block;
+  }
+
+  .clubs_tarjetas h3 a {
+    text-shadow: 0px 0px 4px rgb(0, 0, 0);
+  }
+
+  .clubs_tarjetas h3 a:hover {
+    text-shadow: 0px 0px 4px rgb(0, 0, 0);
+  }
+
+  /* BARIITA DEL MEDIO */
+
+  .clubs_card_info h3:after {
+    content: " ";
+    display: block;
+    width: 10%;
+    height: 2px;
+    margin: 0px auto;
+    border: 0;
+    background: #ff0000;
+    transition: all 0.2s;
+  }
+
+  /* TEXTO DE ATRAS */
+
+  .clubs_card_info {
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: -0px;
+    left: 0;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-style: 16px;
+    line-height: 24px;
+    z-index: 20;
+    opacity: 0;
+    transition: bottom 0.64s, opacity 0.63s cubic-bezier(0.33, 0.66, 0.66, 1);
+  }
+
+  .clubs_card_info p {
+    width: 100%;
+    text-align: justify;
+    position: relative;
+  }
+
+  /* BOTON DE APUNTARSE */
+  .clubs_card_info a {
+    position: relative;
+
+    display: block;
+    width: 100px;
+    margin: 5px auto;
+    background: #fff;
+    color: #444;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+  }
+
+  .clubs_card_info a:hover {
+    background: #ec4444;
+    color: #fff;
+  }
+
+  .clubs_card_info a:hover span {
+    filter: brightness(10);
+    opacity: 1;
+  }
+
+  .clubs_utility_info {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    text-align: left;
+  }
+
+  .clubs_utility_info:after {
+    content: " ";
+    display: block;
+    opacity: 0.4;
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+    width: 30px;
+    height: 15px;
+  }
+
+  .clubs_utility_info a:hover {
+    text-decoration: underline;
+  }
+
+  .clubs_utility_list {
+    list-style-type: none;
+    margin: 0px 0 -1000px 110px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .clubs_utility_list li {
+    padding: 3px 0 15px 0px;
+    font-size: 0.9em;
+    margin-left: -25%;
+  }
+
+  .clubs_utility_list li p {
+    margin-top: -8%;
+    margin-left: 9%;
+  }
+
+  .clubs_hashtags {
+    margin: 2.845vh;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  #clubs_primero {
+    position: relative;
+    color: black;
+    top: 138px;
+    left: -20px;
+    padding: 5px;
+    font-size: 10px;
+    box-shadow: 0px 2px 6px #000;
+    background-color: #f3f3f3;
+  }
+
+  #clubs_segundo {
+    position: relative;
+    color: black;
+    top: 138px;
+    padding: 5px;
+    font-size: 10px;
+    box-shadow: 0px 2px 6px #000;
+    background-color: #f3f3f3;
+  }
+
+  #clubs_tercero {
+    position: relative;
+    color: black;
+    left: 20px;
+    top: 138px;
+    padding: 5px;
+    font-size: 10px;
+    box-shadow: 0px 2px 6px #000;
+    background-color: #f3f3f3;
+  }
+
+
+
+
+  .tarjetas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 190px;
+    height: 210px;
+    margin: 0;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .tarjetas__contenido {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateZ(-182px) rotateY(0);
+    transform: translateZ(-182px) rotateY(0);
+    -webkit-animation: carrusel 10s infinite cubic-bezier(1, 0.015, 0.295, 1.225) forwards;
+    animation: carrusel 10s infinite cubic-bezier(1, 0.015, 0.295, 1.225) forwards;
+  }
+
+  .tarjetas__elemento {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 190px;
+    height: 210px;
+    border-radius: 6px;
+  }
+
+  .tarjetas__elemento:nth-child(1) {
+    background: #394fd5;
+    -webkit-transform: rotateY(0) translateZ(333px);
+    transform: rotateY(0) translateZ(333px);
+  }
+
+  .tarjetas__elemento:nth-child(2) {
+    background: #39d570;
+    -webkit-transform: rotateY(60deg) translateZ(333px);
+    transform: rotateY(60deg) translateZ(333px);
+  }
+
+  .tarjetas__elemento:nth-child(3) {
+    background: #f0091f;
+    -webkit-transform: rotateY(120deg) translateZ(333px);
+    transform: rotateY(120deg) translateZ(333px);
+  }
+
+  .tarjetas__elemento:nth-child(4) {
+    background: #f0091f;
+    -webkit-transform: rotateY(180deg) translateZ(333px);
+    transform: rotateY(180deg) translateZ(333px);
+  }
+
+  .tarjetas__elemento:nth-child(5) {
+    background: #f0e809;
+    -webkit-transform: rotateY(240deg) translateZ(333px);
+    transform: rotateY(240deg) translateZ(333px);
+  }
+
+  .tarjetas__elemento:nth-child(6) {
+    background: #f0e809;
+    -webkit-transform: rotateY(300deg) translateZ(333px);
+    transform: rotateY(300deg) translateZ(333px);
+  }
+
+  body {
+    background: #6c4949;
+  }
+
+  @-webkit-keyframes carrusel {
+
+    0%,
+    17.5% {
+      -webkit-transform: translateZ(-182px) rotateY(0);
+      transform: translateZ(-182px) rotateY(0);
+    }
+
+    0%,
+    17.5% {
+      -webkit-transform: translateZ(-182px) rotateY(-60deg);
+      transform: translateZ(-182px) rotateY(-60deg);
+    }
+
+    27.5%,
+    45% {
+      -webkit-transform: translateZ(-182px) rotateY(-120deg);
+      transform: translateZ(-182px) rotateY(-120deg);
+    }
+
+    0%,
+    17.5% {
+      -webkit-transform: translateZ(-182px) rotateY(-180deg);
+      transform: translateZ(-182px) rotateY(-180deg);
+    }
+
+    55%,
+    72.5% {
+      -webkit-transform: translateZ(-182px) rotateY(-240deg);
+      transform: translateZ(-182px) rotateY(-240deg);
+    }
+
+    0%,
+    17.5% {
+      -webkit-transform: translateZ(-182px) rotateY(-300deg);
+      transform: translateZ(-182px) rotateY(-300deg);
+    }
+
+    82.5%,
+    100% {
+      -webkit-transform: translateZ(-182px) rotateY(-360deg);
+      transform: translateZ(-182px) rotateY(-360deg);
+    }
+  }
+
+  @keyframes carrusel {
+
+    0%,
+    8.5% {
+      -webkit-transform: translateZ(-182px) rotateY(0);
+      transform: translateZ(-182px) rotateY(0);
+    }
+
+    16.5%,
+    24% {
+      -webkit-transform: translateZ(-182px) rotateY(-60deg);
+      transform: translateZ(-182px) rotateY(-60deg);
+    }
+
+    32.5%,
+    40% {
+      -webkit-transform: translateZ(-182px) rotateY(-120deg);
+      transform: translateZ(-182px) rotateY(-120deg);
+    }
+
+    48.5%,
+    56% {
+      -webkit-transform: translateZ(-182px) rotateY(-180deg);
+      transform: translateZ(-182px) rotateY(-180deg);
+    }
+
+    64%,
+    72.5% {
+      -webkit-transform: translateZ(-182px) rotateY(-240deg);
+      transform: translateZ(-182px) rotateY(-240deg);
+    }
+
+    80%,
+    88.5% {
+      -webkit-transform: translateZ(-182px) rotateY(-300deg);
+      transform: translateZ(-182px) rotateY(-300deg);
+    }
+
+    94.5%,
+    100% {
+      -webkit-transform: translateZ(-182px) rotateY(-360deg);
+      transform: translateZ(-182px) rotateY(-360deg);
+    }
+  }
+</style>
+
+
+
+<section>
+  <div class="title"><span>BIENVENIDO</span><span>
+      A NUESTRA PEQUEÑA <a target="_blanck" href="clubes.html">FAMILIA DE CLUBS</a></span></div>
+</section>
+
+<nav>
+  <ul>
+    <a href="index.html">
+      <li>VER MAS</li>
+    </a>
+    <a href="clubes.html">
+      <li>CLUBS</li>
+    </a>
+    <a href="contacto.html">
+      <li>CONTACTA</li>
+    </a>
+    <a href="downloadAPP.html">
+      <li>APP</li>
+    </a>
+    <a href="login.html">
+      <li>LOGIN</li>
+    </a>
+    <li class="slide"></li>
+  </ul>
+</nav>
+
+
+<div class="carruselete">
+  <figure class="tarjetas">
+    <div class="tarjetas__contenido">
+
+      <div class="clubs_tarjetas tarjetas__elemento" id="clubs_11">
+        <div class="clubs_gradient_overlay"></div>
+      </div>
+
+      <!-- <div class="tarjetas__elemento"><h1>Elemento 2</h1></div> -->
+
+      <!-- CLUB TECNOLOGÍA 3 -->
+      <div class="clubs_tarjetas tarjetas__elemento" id="clubs_1">
+        <div class="clubs_gradient_overlay"></div>
+      </div>
+      <!-- FIN TARJETA -->
+
+      <!-- <div class="tarjetas__elemento"><h1>Elemento 3</h1></div> -->
+
+      <!-- CLUB TECNOLOGÍA 6 -->
+      <div class="clubs_tarjetas tarjetas__elemento" id="clubs_7">
+        <div class="clubs_gradient_overlay"></div>
+      </div>
+      <!-- FIN TARJETA -->
+
+      <!-- <div class="tarjetas__elemento"><h1>Elemento 4</h1></div> -->
+
+      <!-- CLUB SALUD 6 -->
+      <div class="clubs_tarjetas tarjetas__elemento" id="clubs_10">
+        <div class="clubs_gradient_overlay"></div>
+      </div>
+      <!-- FIN TARJETA -->
+
+      <!-- <div class="tarjetas__elemento"><h1>Elemento 5</h1></div> -->
+
+      <!-- CLUB SOCIAL 2 -->
+      <div class="clubs_tarjetas tarjetas__elemento" id="clubs_5">
+        <div class="clubs_gradient_overlay"></div>
+      </div>
+      <!-- FIN TARJETA -->
+
+
+      <!-- <div class="tarjetas__elemento"><h1>Elemento 6</h1></div> -->
+
+      <!-- TARJETAS DE CLUBS DEPORTE-->
+      <!-- CLUB DEPORTE 1 -->
+      <div class="clubs_tarjetas tarjetas__elemento" id="clubs_4">
+        <div class="clubs_gradient_overlay"></div>
+      </div>
+      <!-- FIN TARJETA -->
+
+
+
+    </div>
+  </figure>
+</div>
+
+
+
+
+
+
+
+</html>
