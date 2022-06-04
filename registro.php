@@ -1,9 +1,10 @@
 <?php
     
-    $dbhost="3.73.75.167";
-    $dbuser="admin";
-    $dbpass="root";
-    $dbname="paginaweb";
+    
+    $dbhost="bx6upwoiubkc4felso1w-mysql.services.clever-cloud.com";
+    $dbuser="uflpbetwquqnmjoz";
+    $dbpass="apjpBAssEuhauYy6mUP";
+    $dbname="bx6upwoiubkc4felso1w";
 
     $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 
