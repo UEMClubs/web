@@ -1,6 +1,6 @@
 <?php
     
-    $dbhost="18.184.6.232";
+    $dbhost="3.73.75.167";
     $dbuser="admin";
     $dbpass="root";
     $dbname="paginaweb";
