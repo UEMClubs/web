@@ -8,8 +8,361 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  
 </head>
-<body>
+
+
+
+
+
+
+<style>
+  :root {
+font-family: Helvetica;
+/*-------------Colors------------- */
+--ColorDarkA: hsl(0, 0%, 0%);
+--ColorDarkB: hsl(0, 0%, 18%);
+--ColorWhiteA: hsl(0, 0%, 94%);
+--ColorWhiteB: hsl(0, 0%, 90%);
+/*-------------FontSize -- Golden Ratio (1.618) Base Size 13px------------- */
+--FontH1: 233.25px;
+--FontH2: 144.16px;
+--FontH3: 89.10px;
+--FontH4: 55.07px;
+--FontH5: 34.03px;
+--FontParagraph: 21.03px;
+--FontSubtitle: 13px;
+/*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+--GoldenRatio1: 1920px;
+--GoldenRatio2: 1186.65px;
+--GoldenRatio3: 733.41px;
+--GoldenRatio4: 453.28px;
+--GoldenRatio5: 280.15px;
+--GoldenRatio6: 173.15px;
+--GoldenRatio7: 107.01px;
+--GoldenRatio8: 66.14px;
+--GoldenRatio9: 40.88px;
+--GoldenRatio10: 25.27px;
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
+* {
+margin: 0;
+padding: 0;
+
+}
+
+body {
+
+opacity: 0;
+}
+
+/* #wrapper {
+width: 100vw;
+height: 100vh;
+display: flex;
+flex-flow: column;
+align-items: center;
+justify-content: center;
+} */
+
+#wrapper h1 {
+position: absolute;
+left: var(--GoldenRatio7);
+font-size: var(--FontH2);
+}
+
+#wrapper h1 span {
+color: var(--ColorDarkB);
+}
+
+#wrapper p {
+position: absolute;
+bottom: var(--GoldenRatio7);
+color: var(--ColorDarkB);
+font-size: var(--FontParagraph);
+}
+
+#ImgWrapper {
+position: relative;
+width: 100vw;
+height: 100vh;
+overflow: hidden;
+perspective: 2200px;
+background: var(--ColorDarkA);
+}
+
+#ImgWrapper img {
+position: absolute;
+box-shadow: 0 0 31px black;
+}
+
+#ImgWrapper #img1 {
+z-index: 1;
+height: 40vh;
+bottom: 25%;
+left: 5%;
+}
+
+#ImgWrapper #img2 {
+z-index: 2;
+height: 45vh;
+bottom: 40%;
+right: 5%;
+}
+
+#ImgWrapper #img3 {
+z-index: 3;
+height: 30vh;
+bottom: 40%;
+right: 350%;
+}
+
+#ImgWrapper #img4 {
+z-index: 4;
+height: 31vh;
+bottom: 55%;
+left: 13%;
+}
+
+#ImgWrapper #img5 {
+z-index: 5;
+height: 50vh;
+bottom: 22%;
+left: 36%;
+}
+
+#ImgWrapper #img6 {
+z-index: 6;
+height: 31vh;
+bottom: 13%;
+left: 13%;
+}
+
+#ImgWrapper #img7 {
+z-index: 7;
+height: 31vh;
+bottom: 10%;
+right: 13%;
+}
+
+#codeby {
+height: 100vh;
+width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#codeby a {
+text-decoration: none;
+font-size: var(--FontH5);
+font-weight: 400;
+color: var(--ColorWhiteB);
+}
+
+#codeby a span {
+font-weight: 700;
+display: inline-block;
+color: var(--ColorWhiteA);
+}
+
+/*-------------@media (max-width: 1920px)------------- */
+
+@media (max-width: 1920px) {
+:root {
+/*-------------FontSize (PX to VW Conversion With Viewport Width 1920px)------------- */
+--FontH1: 12.148vw;
+--FontH2: 7.508vw;
+--FontH3: 4.641vw;
+--FontH4: 2.868vw;
+--FontH5: 1.772vw;
+--FontParagraph: 1.095vw;
+--FontSubtitle: 0.677vw;
+/*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+--GoldenRatio1: 100vw;
+--GoldenRatio2: 61.805vw;
+--GoldenRatio3: 38.198vw;
+--GoldenRatio4: 23.608vw;
+--GoldenRatio5: 14.591vw;
+--GoldenRatio6: 9.018vw;
+--GoldenRatio7: 5.573vw;
+--GoldenRatio8: 3.445vw;
+--GoldenRatio9: 2.129vw;
+--GoldenRatio10: 1.316vw;
+}
+}
+
+/*-------------/@media (max-width: 1920px)------------- */
+
+/*-------------@media (max-width: 400px)------------- */
+
+@media (max-width: 400px) {
+:root {
+/*-------------GoldenRatio (1.618) (Viewport Width 400px) Base Size 13px------------- */
+--FontH1: 58.313vw;
+--FontH2: 36.040vw;
+--FontH3: 22.275vw;
+--FontH4: 13.768vw;
+--FontH5: 8.508vw;
+--FontParagraph: 5.258vw;
+--FontSubtitle: 3.250vw;
+/*-------------GoldenRatio (1.618) (Viewport Width 400px)------------- */
+--GoldenRatio1: 100vw;
+--GoldenRatio2: 61.805vw;
+--GoldenRatio3: 38.197vw;
+--GoldenRatio4: 23.608vw;
+--GoldenRatio5: 14.590vw;
+--GoldenRatio6: 9.018vw;
+--GoldenRatio7: 5.572vw;
+--GoldenRatio8: 3.445vw;
+--GoldenRatio9: 2.130vw;
+--GoldenRatio10: 1.317vw;
+}
+#wrapper h1 {
+font-size: var(--FontH5);
+}
+#ImgWrapper #img1 {
+height: 22vh;
+bottom: 50%;
+left: 7%;
+}
+#ImgWrapper #img2 {
+height: 22vh;
+bottom: 70%;
+right: 7%;
+}
+#ImgWrapper #img3 {
+height: 10vh;
+bottom: 35%;
+right: 35%;
+}
+#ImgWrapper #img4 {
+height: 22vh;
+bottom: 61.89%;
+left: 13%;
+}
+#ImgWrapper #img5 {
+height: 35vh;
+left: 46%;
+bottom: 31%;
+}
+#ImgWrapper #img6 {
+height: 17vh;
+bottom: 22%;
+}
+#ImgWrapper #img7 {
+height: 18vh;
+left: 22%;
+}
+#codeby a {
+font-size: var(--FontParagraph);
+}
+}
+
+/*-------------/@media (max-width: 400px)------------- */
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!----------------------------------------------------LandingPage Intro--------------------------------------------------->
+<div id="wrapper">
+  <section>
+    <div class="title"><span>BIENVENIDO</span><span>
+        A NUESTRA PEQUEÑA <a target="_blanck" href="clubes.html">FAMILIA DE CLUBS</a></span></div>
+  </section>
+</div>
+<!----------------------------------------------------/LandingPage Intro--------------------------------------------------->
+<!----------------------------------------------------LandingPage--------------------------------------------------->
+<div id="ImgWrapper">
+  <img id="img1" src="img-clubs/asociacion-odontologica-club-madri.2e16d0ba.fill-400x224.jpg" alt="">
+  <img id="img2" src="img-clubs/workout.jpg" alt="">
+  <img id="img3" src="img-clubs/club-fotografia-uem-logo.2e16d0ba.fill-400x224.jpg" alt="">
+  <img id="img4" src="img-clubs/club-rol-uem.svg" alt="">
+  <img id="img5" src="img-clubs/chess-club-uem-logo.2e16d0ba.fill-400x224.jpg" alt="">
+  <img id="img6" src="img-clubs/cludeciencias3.svg" alt="">
+  <img id="img7" src="img-clubs/cinema-club.svg" alt="">
+
+  <!------------CodeBy------------>
+  <div id="codeby">
+    <a target="_blank" href="clubes.html">Disfruta con los <span> CLUBS</span></a>
+  </div>
+  <!------------/CodeBy------------>
+</div>
+<!----------------------------------------------------/LandingPage--------------------------------------------------->
+
+<!-- gsap-latest-beta.min.js -->
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426'></script>
+<!-- ScrollTrigger.min.js -->
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'></script>
+<script src="JS/App.js"></script>
+
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+//---------------------Landing Page ScrollTrigger---------------------
+function LandingPageScrollTrigger() {
+
+gsap.to('body', { // LoadingAnimation---------------------
+  opacity: 1, duration: 1.3,
+}) // /LoadingAnimation---------------------
+
+$("#codeby a").mouseenter(function () { // HoverAnimation---------------------
+  gsap.to('#ImgWrapper', { backgroundColor: "#f0f0f0", })
+  gsap.to('#codeby a', { color: "#2e2e2e", })
+  gsap.to('#codeby a span', { color: "#000000", })
+});
+$("#codeby a").mouseout(function () {
+  gsap.to('#ImgWrapper', { backgroundColor: "#000000", })
+  gsap.to('#codeby a', { color: "#e6e6e6", })
+  gsap.to('#codeby a span', { color: "#f0f0f0", })
+}); // /HoverAnimation---------------------
+
+let LandingPageScrollTrigger = gsap.timeline({
+  scrollTrigger: {
+      trigger: "#ImgWrapper",
+      start: "0% 0%",
+      end: "100% 0%",
+      pin: "#ImgWrapper",
+      scrub: 2.2,
+  }
+})
+LandingPageScrollTrigger
+  .to('#ImgWrapper #img7', { transform: 'translateZ(4500px)', }, 0)
+  .to('#ImgWrapper #img6', { transform: 'translateZ(3700px)', }, 0)
+  .to('#ImgWrapper #img5', { transform: 'translateZ(3100px)', }, 0)
+  .to('#ImgWrapper #img4', { transform: 'translateZ(2800px)', }, 0)
+  .to('#ImgWrapper #img3', { transform: 'translateZ(2600px)', }, 0)
+  .to('#ImgWrapper #img2', { transform: 'translateZ(2400px)', }, 0)
+  .to('#ImgWrapper #img1', { transform: 'translateZ(2200px)', }, 0)
+  .from('#codeby a', { y: 130, opacity: 0 }, 0.31)
+}
+//---------------------/Landing Page ScrollTrigger---------------------
+
+window.onload = () => {
+LandingPageScrollTrigger()
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
   (function ($) {
     // variables
@@ -24,7 +377,7 @@
       $('li').removeClass('active');
       $(this).addClass('active');
     });
-  })(jQuery); ç
+  })(jQuery);
 </script>
 
 <style>
@@ -182,7 +535,7 @@
   }
 
   section .title {
-    padding-left: 400px;
+    padding-left: 480px;
     max-width: 60%;
     width: 100%;
     align-self: center;
@@ -942,13 +1295,6 @@
   }
 </style>
 
-
-
-<section>
-  <div class="title"><span>BIENVENIDO</span><span>
-      A NUESTRA PEQUEÑA <a target="_blanck" href="clubes.html">FAMILIA DE CLUBS</a></span></div>
-</section>
-
 <nav>
   <ul>
     <a href="index.html">
@@ -1031,6 +1377,6 @@
 
 
 
-</body>
+
 
 </html>
